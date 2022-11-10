@@ -1,0 +1,48 @@
+.header {
+    background: var(--gray-700);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    height: 12.5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.formNewTasks {
+    position: absolute;
+    height: 3.375rem;
+    bottom: calc(-3.375rem / 2);
+    width: 100%;
+    max-width: 46rem;
+    display: flex;
+    gap: 0.5rem;
+    padding: 0 1rem;
+}
+
+.formNewTasks input {
+    width: 100%;
+    height: 100%;
+    color: var(--gray-100);
+    background: var(--gray-500);
+    border: 1 solid var(--gray-700);
+    border-radius: 8px;
+    padding: 0 1rem;
+    font-size: 1rem;
+}
+
+.formNewTasks button {
+    height: 100%;
+    padding: 0 1rem;
+    background: var(--blue-400);
+    color: var(--gray-100);
+    border: none;
+    border-radius: 8px;
+    gap: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: bold;
+}

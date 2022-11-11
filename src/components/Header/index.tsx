@@ -1,4 +1,3 @@
-
 import { PlusCircle } from 'phosphor-react';
 
 import styles from './Header.module.css'
@@ -16,5 +15,3 @@ export function Header() {
     </header>
   )
 }
-
-export default Header

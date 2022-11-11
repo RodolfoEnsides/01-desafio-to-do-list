@@ -1,0 +1,58 @@
+.task {
+    width: 100%;
+    margin-top: 1.5rem;
+    background: var(--gray-500);
+    border: 1px solid var(--gray-400);
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    border-radius: 8px;
+
+}
+
+.task p {
+    width: 100%;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--gray-100);
+}
+
+.task button.nCheckButton {
+    max-width: 1.25rem;
+    max-height: 1.125rem;
+    background: none;
+    border: none;
+    border-radius: 99px;
+    color: var(--blue-300);
+}
+
+.task button.checkButton {
+    min-width: 1.25rem;
+    min-height:  1.25rem;
+    max-width: 1.25rem;
+    max-height:  1.25rem;
+    background: var(--purple-300);
+    border: none;
+    border-radius: 99px;
+    color: var(--gray-100);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.task button.deleteButton {
+    width: 2rem;
+    height: 2rem;
+    background: none;
+    border: none;
+    color: var(--gray-300);
+    transition: color 0.1s;
+}
+
+.task button.deleteButton:hover {
+    color: var(--red-300);
+}

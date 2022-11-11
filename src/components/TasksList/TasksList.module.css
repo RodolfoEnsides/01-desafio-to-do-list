@@ -1,0 +1,47 @@
+.taskList {
+    width: 100%;
+    max-width: 46rem;
+
+    margin: 0 auto;
+    margin-top: 5.687rem;
+    padding: 0 1rem;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .taskInfos{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem
+}
+
+header strong {
+    color: var(--blue-300);
+    font-size: 0.875rem;
+}
+
+header .toDo {
+    color: var(--blue-300);
+}
+
+header .done {
+    color: var(--purple-300);
+}
+
+header span {
+    color: var(--gray-200);
+    background: var(--gray-400);
+    padding: 0.125rem 0.6rem;
+    border-radius: 99px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+section .tassks {
+    display: flex;
+    flex-direction: column;
+}

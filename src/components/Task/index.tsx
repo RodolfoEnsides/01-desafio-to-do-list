@@ -4,11 +4,11 @@ import styles from './Task.module.css'
 
 import { TasksProps } from '../../App'
 
-interface TaskProps {
-  task: TasksProps[],
+interface Props {
+  task: TasksProps,
 }
 
-export function Task({ task }: TaskProps) {
+export function Task({ task }: Props) {
   const [checked, setChecked] = useState(false)
 
   function handleCheckTask() {

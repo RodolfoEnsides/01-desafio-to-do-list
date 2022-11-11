@@ -20,7 +20,7 @@ export function TasksList({ tasks, onDeleteTaskById, onCheckTaskById}: Props) {
         <header>
             <div className={styles.taskInfos}>
                 <strong className={styles.todo}>Tarefas criadas</strong>
-                <span>0</span>
+                <span>{totalTasks}</span>
             </div>
 
             <div className={styles.taskInfos}>

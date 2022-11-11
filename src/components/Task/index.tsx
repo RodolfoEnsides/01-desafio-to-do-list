@@ -15,6 +15,7 @@ export function Task({ task, onDeleteTaskById, onCheckTaskById }: Props) {
 
   function handleCheckTask() {
     checked ? setChecked(false) : setChecked(true);
+    task.completed = !checked;
     onCheckTaskById(task.id)
   }
 

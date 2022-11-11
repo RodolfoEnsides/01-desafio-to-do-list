@@ -5,16 +5,21 @@ import styles from './Task.module.css'
 import { TasksProps } from '../../App'
 
 interface Props {
-  task: TasksProps,
+  task: TasksProps;
+  onDeleteTaskById: (taskId: number) => void;
+  onCheckTaskById: (taskId: number) => void;
 }
 
-export function Task({ task }: Props) {
-  const [checked, setChecked] = useState(false)
+export function Task({ task, onDeleteTaskById, onCheckTaskById }: Props) {
+  const [checked, setChecked] = useState(task.completed)
 
   function handleCheckTask() {
     checked ? setChecked(false) : setChecked(true);
-    task.completed = !checked;
-    console.log(task)
+    onCheckTaskById(task.id)
+  }
+
+  function handleDeleteTaskById() {
+    onDeleteTaskById(task.id)
   }
 
   return (
@@ -23,9 +28,9 @@ export function Task({ task }: Props) {
        {checked ? <Check size={16} /> : <Circle size={22}/>}
       </button>
 
-      <p>{task.title}</p>
+      <p className={checked ? styles.taskChecked : styles.taskUnchecked}>{task.title}</p>
 
-      <button className={styles.deleteButton}> <Trash size={18} /> </button>
+      <button className={styles.deleteButton} onClick={handleDeleteTaskById}> <Trash size={18} /> </button>
     </div>
   )
 }

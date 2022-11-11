@@ -10,20 +10,9 @@ export interface TasksProps {
 }
 
 export function App() {
-  const [tasksListItems, setTasksListItems] = useState<TasksProps[]>([
-    {
-      id: 1,
-      title: 'teste',
-      completed: true
-    },
-    {
-      id: 2,
-      title: 'teste',
-      completed: true
-    }
-  ])
+  const [tasksListItems, setTasksListItems] = useState<TasksProps[]>([])
 
-  function handleAddTaskToList(taskTitle: string){
+  function addTaskToList(taskTitle: string){
     setTasksListItems([
       ...tasksListItems,
       {
@@ -33,11 +22,31 @@ export function App() {
       }
     ])
   }
+  
+  function deleteTaskById(taskId: number) {
+    const newTasksList = tasksListItems.filter((task) => {
+      return task.id != taskId;
+    })
+    setTasksListItems(newTasksList);
+  }
+
+  function checkTaskById(taskId: number) {
+    const newTasksList = tasksListItems.filter((task) => {
+      if(task.id == taskId){
+        return {
+          ...task,
+          completed: !task.completed,
+        };
+      }
+      return task;
+    });
+    setTasksListItems(newTasksList);
+  }
 
   return (
     <div>
-      <Header onAddTaskToList={handleAddTaskToList} />
-      <TasksList tasks={tasksListItems}/>
+      <Header onAddTaskToList={addTaskToList} />
+      <TasksList onDeleteTaskById={deleteTaskById} tasks={tasksListItems} onCheckTaskById={checkTaskById}/>
     </div>
   )
 }

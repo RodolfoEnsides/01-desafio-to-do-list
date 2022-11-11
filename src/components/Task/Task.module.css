@@ -17,6 +17,15 @@
     width: 100%;
     font-size: 0.875rem;
     line-height: 1.6;
+}
+
+.taskChecked {
+    color: var(--gray-300);
+    text-decoration-line: line-through;
+    transition: color 0.1s text-decoration-line 0.1s;
+}
+
+.taskUnchecked {
     color: var(--gray-100);
 }
 

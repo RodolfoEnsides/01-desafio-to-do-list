@@ -1,14 +1,17 @@
+import { Clipboard } from 'phosphor-react';
 import { Task } from '../Task';
-
-import styles from './TasksList.module.css'
 
 import { TasksProps } from '../../App'
 
+import styles from './TasksList.module.css'
+
 interface Props {
-  tasks: TasksProps[],
+  tasks: TasksProps[];
+  onDeleteTaskById: (taskId: number) => void;
+  onCheckTaskById: (taskId: number) => void; 
 }
 
-export function TasksList({ tasks }: Props) {
+export function TasksList({ tasks, onDeleteTaskById, onCheckTaskById}: Props) {
   const totalTasks = tasks.length;
   const totalCompletedTasks = tasks.filter((task) => task.completed).length;
 
@@ -31,8 +34,20 @@ export function TasksList({ tasks }: Props) {
               <Task 
                 key={item.id}
                 task={item}
+                onDeleteTaskById={onDeleteTaskById}
+                onCheckTaskById= {onCheckTaskById}
               />
           ))}
+
+          {tasks.length == 0 &&
+          <section className={styles.isEmpty}>
+            <Clipboard size={56}/>
+            <div>
+              <strong>Você ainda não tem tarefas cadastradas</strong>
+              <p>Crie tarefas e organize seus itens a fazer</p>
+            </div>
+          </section>
+          }
         </div>
     </section>
   )
